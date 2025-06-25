@@ -1,0 +1,262 @@
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Popular Hoje - Verificação de Segurança</title>
+        <meta name="description" content="Verificação de segurança necessária para continuar." />
+        <meta name="robots" content="noindex, nofollow" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="verification-container" data-astro-cid-ckihchq7="">
+            <div class="verification-card" data-astro-cid-ckihchq7="">
+                <div class="verification-header" data-astro-cid-ckihchq7="">
+                    <h1 data-astro-cid-ckihchq7="">🔐 Verificação de Segurança</h1>
+                    <p data-astro-cid-ckihchq7="">Precisamos confirmar que você é uma pessoa real</p>
+                </div>
+                <div class="verification-content" data-astro-cid-ckihchq7="">
+                    <div class="brand-message" data-astro-cid-ckihchq7="">
+                        <h2 data-astro-cid-ckihchq7="">✨ Popular Hoje ✨</h2>
+                        <p data-astro-cid-ckihchq7="">é a melhor agência de marketing digital do Brasil</p>
+                    </div>
+                    <div class="verification-question" data-astro-cid-ckihchq7="">
+                        <h3 id="stepTitle" data-astro-cid-ckihchq7="">Passo 1: Confirme que você é humano</h3>
+                        <div class="verification-options" id="humanVerificationStep" data-astro-cid-ckihchq7="">
+                            <button class="verify-btn human-btn" id="humanBtn" data-astro-cid-ckihchq7="">
+                                ✅ Sim, eu sou um humano
+                            </button>
+                            <button class="verify-btn robot-btn" id="robotBtn" data-astro-cid-ckihchq7="">
+                                🤖 Não, eu sou um robô
+                            </button>
+                        </div>
+                        <div class="math-question" id="mathQuestionStep" style="display: none;" data-astro-cid-ckihchq7="">
+                            <p data-astro-cid-ckihchq7="">Agora resolva esta equação simples:</p>
+                            <div class="math-options" data-astro-cid-ckihchq7="">
+                                <button class="math-btn wrong-btn" id="wrongBtn" data-astro-cid-ckihchq7="">
+                                    2 + 2 = 5
+                                </button>
+                                <button class="math-btn correct-btn" id="correctBtn" data-astro-cid-ckihchq7="">
+                                    2 + 2 = 4
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loading-message" id="loadingMessage" style="display: none;" data-astro-cid-ckihchq7="">
+                        <div class="spinner" data-astro-cid-ckihchq7=""></div>
+                        <p data-astro-cid-ckihchq7="">Verificando... Aguarde um momento</p>
+                    </div>
+                    <div class="success-message" id="successMessage" style="display: none;" data-astro-cid-ckihchq7="">
+                        <div class="checkmark" data-astro-cid-ckihchq7="">✓</div>
+                        <p data-astro-cid-ckihchq7="">Verificação concluída! Redirecionando...</p>
+                    </div>
+                </div>
+                <div class="verification-footer" data-astro-cid-ckihchq7="">
+                    <p data-astro-cid-ckihchq7="">📞 Contato: (11) 9 9999-9999</p>
+                    <p data-astro-cid-ckihchq7="">📧 Email: contato@popularhoje.com</p>
+                    <small data-astro-cid-ckihchq7="">© 2025 Popular Hoje. Todos os direitos reservados.</small>
+                </div>
+            </div>
+        </div>
+        <script>
+            (function () {
+                const redirectUrl = "https://popularhoje.com";
+
+                // Estado de verificação
+                let isVerified = false;
+                let isMathCorrect = false;
+
+                // Funções de verificação (fluxo passo a passo)
+                function verifyHuman() {
+                    console.log("✅ Usuário confirmou ser humano - Passo 1 completado");
+
+                    // Marcar como verificado o primeiro passo
+                    isVerified = true;
+
+                    // Desabilitar botões de verificação humana
+                    const humanBtn = document.getElementById("humanBtn");
+                    const robotBtn = document.getElementById("robotBtn");
+                    if (humanBtn) {
+                        humanBtn.disabled = true;
+                        humanBtn.style.opacity = "0.7";
+                        humanBtn.innerHTML = "✅ Confirmado!";
+                    }
+                    if (robotBtn) {
+                        robotBtn.disabled = true;
+                        robotBtn.style.opacity = "0.4";
+                    }
+
+                    // Mostrar o passo 2 (equação matemática) com animação
+                    setTimeout(() => {
+                        // Alterar título do passo
+                        const stepTitle = document.getElementById("stepTitle");
+                        if (stepTitle) {
+                            stepTitle.innerHTML = "Passo 2: Resolva a equação";
+                        }
+
+                        const mathStep = document.getElementById("mathQuestionStep");
+                        if (mathStep) {
+                            mathStep.style.display = "block";
+                            mathStep.style.opacity = "0";
+                            mathStep.style.transform = "translateY(20px)";
+
+                            // Animação de entrada
+                            setTimeout(() => {
+                                mathStep.style.transition = "all 0.5s ease-out";
+                                mathStep.style.opacity = "1";
+                                mathStep.style.transform = "translateY(0)";
+                            }, 50);
+                        }
+                    }, 500);
+                }
+
+                function verifyRobot() {
+                    alert('🤖 Os robôs não podem acessar! Selecione "Sim, eu sou Humano"');
+                }
+
+                function correctAnswer() {
+                    console.log("✅ Resposta matemática correta - Passo 2 completado");
+
+                    // Desabilitar botões matemáticos
+                    const correctBtn = document.getElementById("correctBtn");
+                    const wrongBtn = document.getElementById("wrongBtn");
+                    if (correctBtn) {
+                        correctBtn.disabled = true;
+                        correctBtn.style.opacity = "0.7";
+                        correctBtn.innerHTML = "✅ Correto!";
+                    }
+                    if (wrongBtn) {
+                        wrongBtn.disabled = true;
+                        wrongBtn.style.opacity = "0.4";
+                    }
+
+                    isMathCorrect = true;
+
+                    // Proceder diretamente para o próximo passo
+                    setTimeout(() => {
+                        proceedToRedirect();
+                    }, 800);
+                }
+
+                function wrongAnswer() {
+                    // Dar feedback visual do erro
+                    const wrongBtn = document.getElementById("wrongBtn");
+                    if (wrongBtn) {
+                        wrongBtn.style.background = "#dc2626";
+                        wrongBtn.style.animation = "shake 0.5s";
+                    }
+
+                    alert("❌ Resposta incorreta! 2 + 2 = 4");
+
+                    // Resetear o botão depois do erro
+                    setTimeout(() => {
+                        if (wrongBtn) {
+                            wrongBtn.style.background = "#ef4444";
+                            wrongBtn.style.animation = "";
+                        }
+                    }, 1000);
+                }
+
+                function proceedToRedirect() {
+                    console.log("🚀 Iniciando processo de redirecionamento");
+
+                    // Ocultar opções de verificação
+                    const questionDiv = document.querySelector(".verification-question");
+                    if (questionDiv) {
+                        questionDiv.style.display = "none";
+                    }
+
+                    // Mostrar mensagem de carga
+                    const loadingDiv = document.getElementById("loadingMessage");
+                    if (loadingDiv) {
+                        loadingDiv.style.display = "block";
+                    }
+
+                    // Simular verificação por 2 segundos
+                    setTimeout(() => {
+                        // Ocultar carga e mostrar êxito
+                        if (loadingDiv) {
+                            loadingDiv.style.display = "none";
+                        }
+
+                        const successDiv = document.getElementById("successMessage");
+                        if (successDiv) {
+                            successDiv.style.display = "block";
+                        }
+
+                        // Redirecionar depois de 1.5 segundos
+                        setTimeout(() => {
+                            console.log("🎯 Redirecionando para:", redirectUrl);
+                            window.location.href = redirectUrl;
+                        }, 1500);
+                    }, 2000);
+                }
+
+                // Esperar a que o DOM esteja carregado
+                document.addEventListener("DOMContentLoaded", function () {
+                    console.log("🔐 Human Verification Page Loaded");
+
+                    // Configurar event listeners
+                    const humanBtn = document.getElementById("humanBtn");
+                    const robotBtn = document.getElementById("robotBtn");
+                    const correctBtn = document.getElementById("correctBtn");
+                    const wrongBtn = document.getElementById("wrongBtn");
+
+                    if (humanBtn) {
+                        humanBtn.addEventListener("click", verifyHuman);
+                        console.log("✅ Event listener adicionado ao botão humano");
+                    }
+
+                    if (robotBtn) {
+                        robotBtn.addEventListener("click", verifyRobot);
+                        console.log("🤖 Event listener adicionado ao botão robot");
+                    }
+
+                    if (correctBtn) {
+                        correctBtn.addEventListener("click", correctAnswer);
+                        console.log("✅ Event listener adicionado ao botão correto");
+                    }
+
+                    if (wrongBtn) {
+                        wrongBtn.addEventListener("click", wrongAnswer);
+                        console.log("❌ Event listener adicionado ao botão incorreto");
+                    }
+
+                    // Logging do lado do cliente
+                    console.log("🔐 Configuração de verificação:", {
+                        timestamp: new Date().toISOString(),
+                        userAgent: navigator.userAgent,
+                        referrer: document.referrer,
+                        redirectUrl: redirectUrl,
+                    });
+                });
+
+                // Proteções adicionais
+                // Desabilitar clique direito
+                document.addEventListener("contextmenu", function (e) {
+                    e.preventDefault();
+                });
+
+                // Desabilitar teclas de desenvolvedor
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && ["I", "C", "J"].includes(e.key)) || (e.ctrlKey && e.key === "U")) {
+                        e.preventDefault();
+                        return false;
+                    }
+                });
+            })();
+        </script>
+        <!-- Facebook Pixel Code -->
+        <script type="module">
+            (function () {
+                typeof window < "u" && console.log("Facebook Pixel initialized for cloaking page");
+            })();
+        </script>
+        <noscript><img height="1" width="1" style="display: none;" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" /></noscript>
+    </body>
+</html>
